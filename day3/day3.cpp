@@ -51,15 +51,22 @@ int main() {
       }
       // cout << "0th bit zero: " << zero.zero << endl;
       // cout << "0th bit one: " << zero.one << endl;
-      if(zero.zero > zero.one) {
-        cout << "0";
-      } else {
-        cout << "1";
-      }
+      // if(zero.zero > zero.one) {
+      //   cout << "0";
+      // } if(zero.zero < zero.one) {
+      //   cout << "1";
+      // } if(zero.zero == zero.one) {
+      //   cout << "j";
+      // }
       zero.zero = 0;
       zero.one = 0;
     }
-    cout << endl;
+    // cout << endl;
+  }
+  for(int i = 0; i < 1000; i++) {
+    if(lines[i][0] - '0' == 0) {
+      cout << lines[i] << endl;
+    }
   }
   // cout << "0th bit zero: " << zero.zero << endl;
   // cout << "0th bit one: " << zero.one << endl;

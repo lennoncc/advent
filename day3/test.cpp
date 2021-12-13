@@ -51,15 +51,38 @@ int main() {
       }
       // cout << "0th bit zero: " << zero.zero << endl;
       // cout << "0th bit one: " << zero.one << endl;
-      if(zero.zero > zero.one) {
-        cout << "0";
-      } else {
-        cout << "1";
-      }
+      // if(zero.zero > zero.one) {
+        // cout << "0";
+      // } if(zero.zero < zero.one) {
+        // cout << "1";
+      // } if(zero.zero == zero.one) {
+        // cout << "j";
+      // }
       zero.zero = 0;
       zero.one = 0;
     }
-    cout << endl;
+    // cout << endl;
+  }
+  vector<int> answer;
+  answer[0] = 1;
+  answer[1] = 0;
+  answer[2] = 1;
+  answer[3] = 1;
+  answer[4] = 0;
+
+  for(int i = 0; i < 12; i++) {
+    for(int j = 0; j < 5; j++) {
+      if(lines[i][j] - '0' == answer[j]) {
+        cout << lines[i] << endl;
+      }
+    }
+    // if(lines[i][0] - '0' == 1) {
+      // if(lines[i][1] - '0' == 0) {
+        // if(lines[i][2] - '0' == 1) {
+          // cout << lines[i] << endl;
+        // }
+      // }
+    // }
   }
   // cout << "0th bit zero: " << zero.zero << endl;
   // cout << "0th bit one: " << zero.one << endl;
