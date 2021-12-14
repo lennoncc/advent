@@ -65,4 +65,13 @@ int main() {
   cout << boards[1].stringrows[2] << endl;
   cout << boards[1].stringrows[3] << endl;
   cout << boards[1].stringrows[4] << endl;
+  // TODO:
+  // Convert strings of rows into vector of nums
+  // Convert rows into cols
+  // Iterate through bingo calls and check every board, row, and col
+  // If have num, remove num from given thing
+  // If any row/col is empty, bingo
+  // calculate score by adding all values in each row, multiply by winning num that was called
+  // cash money
+
 }
