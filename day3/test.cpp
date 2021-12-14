@@ -4,6 +4,7 @@
 #include <vector>
 #include <bits/stdc++.h>
 #include <ctype.h>
+#include <list>
 
 using namespace std;
 
@@ -38,52 +39,29 @@ int main() {
       lines.push_back(line);
     }
   }
-  for(int i = 0; i < 12; i++) {
-    for(int j = 0; j < 5; j++) {
-      // cout << lines[i][j] << endl;
-      // cout << lines[i][j] - '0' << endl;
-      for(int k = 0; k < 12; k++) {
-        if(lines[k][j] - '0' == 1) {
-          zero.one++;
-        } else {
-          zero.zero++;
-        }
-      }
-      // cout << "0th bit zero: " << zero.zero << endl;
-      // cout << "0th bit one: " << zero.one << endl;
-      // if(zero.zero > zero.one) {
-        // cout << "0";
-      // } if(zero.zero < zero.one) {
-        // cout << "1";
-      // } if(zero.zero == zero.one) {
-        // cout << "j";
-      // }
-      zero.zero = 0;
-      zero.one = 0;
-    }
-    // cout << endl;
-  }
+  
   vector<int> answer;
-  answer[0] = 1;
-  answer[1] = 0;
-  answer[2] = 1;
-  answer[3] = 1;
-  answer[4] = 0;
+  answer.push_back(1);
+  answer.push_back(0);
+  answer.push_back(1);
+  answer.push_back(1);
+  answer.push_back(1);
 
-  for(int i = 0; i < 12; i++) {
-    for(int j = 0; j < 5; j++) {
-      if(lines[i][j] - '0' == answer[j]) {
-        cout << lines[i] << endl;
+  // cout << "size is " << lines.size() << endl;
+  for(int i = 0; i < 5; i++) {
+    cout << "checking bit #: " << i + 1 << endl;
+    for(int j = 0; j < lines.size()/*12*/; j++) {
+      cout << "checking element #" << j << ": " << lines[j] << endl;
+      if((lines[j][i] - '0' != answer[i])) {
+        if(lines.size() == 1) {
+          break;
+        }
+        cout << "erasing " << lines[j] << endl;
+        lines.erase(lines.begin() + j);
+        j -= 1;
       }
     }
-    // if(lines[i][0] - '0' == 1) {
-      // if(lines[i][1] - '0' == 0) {
-        // if(lines[i][2] - '0' == 1) {
-          // cout << lines[i] << endl;
-        // }
-      // }
-    // }
   }
-  // cout << "0th bit zero: " << zero.zero << endl;
-  // cout << "0th bit one: " << zero.one << endl;
+  cout << lines.size() << endl;
+  cout << lines[0] << endl;
 }
